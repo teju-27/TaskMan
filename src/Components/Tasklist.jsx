@@ -1,5 +1,5 @@
 
-export default function Tasklist({tasks}) {
+export default function Tasklist({tasks, toggleComplete, deleteTask}) {
     return (
         <ul className='task-list'>
             {tasks.map((task, index )=> (
