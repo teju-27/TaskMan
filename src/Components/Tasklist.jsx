@@ -1,8 +1,21 @@
 
-export default function Tasklist() {
+export default function Tasklist({tasks}) {
     return (
-        <div>
-            <h3>Tasklist component</h3>
-        </div>
+        <ul className='task-list'>
+            {tasks.map((task, index )=> (
+                <li key={index}>
+                    <div>
+                        <span>{task.text}</span>
+                        <small>({task.priority}, {task.category})</small>
+                    </div>
+
+                    <div>
+                        <button onClick={()=>toggleComplete(index)}
+                        >{task.completed ? "Undo" : "Complete"}</button>
+                        <button onClick={()=>deleteTask(index)}>Delete</button>
+                    </div>
+                </li>
+                ))}
+        </ul>
     )
 }

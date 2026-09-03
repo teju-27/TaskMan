@@ -16,7 +16,7 @@ export default function App() {
             <h1>TaskMan</h1>
             <p><i>Friendly Taskmanager</i></p>
             <Taskform addTask ={addTask}/>
-            <Tasklist />
+            <Tasklist tasks = {tasks}/>
             <Progressstracker />
         </div>
     )
