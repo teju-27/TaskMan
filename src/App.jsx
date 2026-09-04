@@ -5,7 +5,14 @@ import { useEffect, useState} from "react"
 import './App.css'
 
 export default function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+  const savedTasks = localStorage.getItem("tasks")
+  if (savedTasks) {
+    return JSON.parse(savedTasks)
+  }
+
+return []
+});
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
