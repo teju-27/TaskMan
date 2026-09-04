@@ -1,3 +1,5 @@
+
+
 export default function Progresstracker({tasks}) {
   const completedTasks = tasks.filter((task) => task.completed).length;
   const totalTasks = tasks.length;
@@ -9,7 +11,7 @@ export default function Progresstracker({tasks}) {
         {completedTasks} of {totalTasks} tasks completed
       </p>
        <div className="progress-bar">
-        <div className="progress" style={{width: ${progress}%}}></div>
+        <div className="progress" style={{width: '${progress}%'}}></div>
        </div>
     </div>
   );
