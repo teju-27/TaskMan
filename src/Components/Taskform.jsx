@@ -6,9 +6,13 @@ export default function Taskform(addTask) {
     const [category, setCategory] = useState('General');
     const handlesubmit = (e) => {
         e.preventDefault();
+        if(task.trim() == "") {
+            alert("Please enter a task!");
+            return;
+        }
         addTask.Task({text:task, priority, category, completed: false})
-        //Reset
-        setTask("");
+        //Reset state 
+        setTask(" ");
         setPriority("Medium");
         setCategory("General");
     }
@@ -16,8 +20,9 @@ export default function Taskform(addTask) {
         <form onSubmit={handlesubmit} className = "task-form">
             <br></br>
             <div id='inp'>
-                <input type='text' placeholder='Enter a Task'  value={task} onChange={(e) => setTask(e.target.value)} />
-                <span><button type='submit'>Add Task</button></span>
+                <input type='text' placeholder="Enter a Task"  value={task} onChange={(e) => setTask(e.target.value)} />
+                
+                <span><button type="submit">Add Task</button></span>
                 <h2>{task} {priority} {category}</h2>
             </div>
 

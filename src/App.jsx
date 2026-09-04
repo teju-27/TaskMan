@@ -23,7 +23,7 @@ export default function App() {
     return (
         <div>
             <h1>TaskMan</h1>
-            <p><i>Friendly Taskmanager</i></p>
+            <p><i>Friendly Task manager</i></p>
             <Taskform addTask ={addTask}/>
             <Tasklist tasks = {tasks} updateTask ={updateTask} deleteTask = {deleteTask}/>
             <Progressstracker />
