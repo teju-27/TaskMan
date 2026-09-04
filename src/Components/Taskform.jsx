@@ -15,7 +15,7 @@ export default function Taskform({addTask}) {
         }
         addTask({text:task, priority, category, completed: false})
         //Reset State:
-        setTask(" ");
+        setTask("");
         setPriority("Medium")
         setCategory("General")
     }
