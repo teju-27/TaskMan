@@ -1,10 +1,16 @@
-
-export default function Progressstracker() {
-    return (
-        <div>
-            <h3>
-                Progress Tracker Component
-            </h3>
-        </div>
-    )
+export default function Progresstracker({tasks}) {
+  const completedTasks = tasks.filter((task) => task.completed).length;
+  const totalTasks = tasks.length;
+  const progress = totalTasks === 0 ? 0 : (completedTasks / totalTasks) * 100;
+  return (
+    <div className = "progress-tracker">
+      <h3>Progress Tracker Components</h3>
+      <p>
+        {completedTasks} of {totalTasks} tasks completed
+      </p>
+       <div className="progress-bar">
+        <div className="progress" style={{width: ${progress}%}}></div>
+       </div>
+    </div>
+  );
 }
