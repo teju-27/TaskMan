@@ -11,12 +11,21 @@ export default function App() {
     const addTask = (task) => {
         setTasks([...tasks, task])
     }
+
+    const updateTask = (updatedTask, index) => {
+        const newtask = [...tasks];
+        newtask[index] = updatedTask;
+        setTasks(newtask);
+    }
+    const deleteTask = (index) => {
+        setTasks(tasks.filter((_, i) => i != index))
+    }
     return (
         <div>
             <h1>TaskMan</h1>
             <p><i>Friendly Taskmanager</i></p>
             <Taskform addTask ={addTask}/>
-            <Tasklist tasks = {tasks}/>
+            <Tasklist tasks = {tasks} updateTask ={updateTask} deleteTask = {deleteTask}/>
             <Progressstracker />
         </div>
     )
